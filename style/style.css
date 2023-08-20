@@ -1,7 +1,17 @@
+body, html{
+   max-width: 100%;
+   overflow-x: hidden;
+}
 body{
    font-family: 'Work Sans', sans-serif;
 }
 .mycontainer{
    max-width: 80%;
    margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+   .mycontainer{
+      max-width: 90%
+   }
 }
