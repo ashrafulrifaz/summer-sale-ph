@@ -187,7 +187,7 @@
                      <button id="btn-apply" class="text-white text-base font-medium bg-[#E527B280] rounded-e-md py-2 px-4" disabled>Apply</button>
                   </div>
                </div>
-               <div class="mt-4 bg-white rounded p-4">
+               <div class="mt-4 bg-white rounded p-4 pb-0">
                   <div id="product-list">
 
                   </div>
@@ -195,8 +195,8 @@
                   <p class="text-lg leading-loose font-medium">Total price: <span id="total-price" class="text-[#11111180]">00</span><span class="text-[#11111180]">TK</span></p>
                   <p class="text-lg leading-loose font-medium">Discount: <span id="discount-price" class="text-[#11111180]">00</span><span class="text-[#11111180]">TK</span></p>
                   <p class="text-lg leading-loose font-medium">Total: <span id="final-price" class="text-[#11111180]">00</span><span class="text-[#11111180]">TK</span></p>
-                  <hr class="my-2.5">
-                  <button onclick="purchase_modal.showModal()" id="btn-purchase" class="text-white text-base font-medium bg-[#E527B280] rounded-md w-full py-2 px-4" disabled>Make Purchase</button>
+                  <hr class="mt-2.5">
+                  <button onclick="purchase_modal.showModal()" id="btn-purchase" class="text-white text-base font-medium bg-[#E527B280] rounded-md w-full md:w-2/5 lg:w-full py-2 px-4 relative -bottom-5" disabled>Make Purchase</button>
                   <dialog id="purchase_modal" class="modal">   
                      <form method="dialog" class="modal-box text-center py-16 px-5 w-4/5 md:w-2/5">
                         <img src="images/congo.png" class="w-1/4 md:w-4/12 lg:w-1/4 mx-auto mb-3">
@@ -212,7 +212,6 @@
          </div>
       </div>
    </section>
-
 
    <script src="style/style.js"></script>
 
