@@ -10,20 +10,15 @@ let discountPrice = document.getElementById('discount-price');
 
 let productList = document.getElementById('product-list');
 
-let applyButton = document.querySelector('#btn-apply')
-
-if(totalPrice > 200){
-   applyButton.removeAttribute('disabled');
-   applyButton.classList.remove('bg-[#E527B280]')   
-   applyButton.classList.add('bg-[#E527B2]')   
-}
-
-if(totalPrice > 0){
-   document.getElementById('btn-purchase').removeAttribute('disabled');
-} 
+let applyButton = document.getElementById('btn-apply');
+let purchaseButton = document.getElementById('btn-purchase');
+document.getElementById('btn-home').addEventListener('click', function(){
+   window.location.reload()
+})
 
 applyButton.addEventListener('click', function(){
-   let promoCodeField = document.getElementById('code-field').value;
+   let promoCodeFieldText = document.getElementById('code-field');
+   let promoCodeField = promoCodeFieldText.value;
    if(promoCodeField === 'SELL200'){
       let discountPercent = (totalPrice / 100) * 20;
       discountPrice.innerText = discountPercent.toFixed(2);
@@ -36,8 +31,8 @@ applyButton.addEventListener('click', function(){
    } else{
       return alert("Wrong Promo Code")
    }
+   promoCodeFieldText.value = ''
 })
-
 
 for(let i = 0; i < products.length; i++){
    let product = products[i];
@@ -59,5 +54,16 @@ for(let i = 0; i < products.length; i++){
       p.classList.add('text-lg', 'font-medium', 'leading-loose')
       p.innerHTML = `${listCount + 1}. ${productName}`;
       productList.appendChild(p);
+
+      if (totalPrice > 200) {
+         applyButton.removeAttribute('disabled');
+         applyButton.classList.remove('bg-[#E527B280]');
+         applyButton.classList.add('bg-[#E527B2]');
+      }
+      if (totalPrice > 0) {
+         purchaseButton.removeAttribute('disabled');
+         purchaseButton.classList.remove('bg-[#E527B280]');
+         purchaseButton.classList.add('bg-[#E527B2]');
+      }
    })
 }
