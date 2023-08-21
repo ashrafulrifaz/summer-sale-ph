@@ -55,7 +55,7 @@ for(let i = 0; i < products.length; i++){
       p.innerHTML = `${listCount + 1}. ${productName}`;
       productList.appendChild(p);
 
-      if (totalPrice > 200) {
+      if (totalPrice >= 200) {
          applyButton.removeAttribute('disabled');
          applyButton.classList.remove('bg-[#E527B280]');
          applyButton.classList.add('bg-[#E527B2]');
